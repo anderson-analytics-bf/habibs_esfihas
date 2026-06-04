@@ -1,0 +1,249 @@
+/* ============================
+   CSS Variables & Themes
+   ============================ */
+:root {
+  --green-900: #0d2b1a;
+  --green-800: #133d25;
+  --green-700: #1a5233;
+  --green-600: #1e6b3f;
+  --green-500: #2a8a52;
+  --green-400: #3aaa66;
+  --sand-100: #f5efe0;
+  --sand-200: #ecdcc0;
+  --sand-300: #d4b896;
+  --sand-400: #b8956c;
+  --gold: #c9a84c;
+  --gold-light: #e2c37a;
+
+  --bg-primary: #0a1f12;
+  --bg-secondary: #0f2d1a;
+  --bg-card: #122a1c;
+  --bg-elevated: #1a3a27;
+  --border-color: #1e4a30;
+
+  --text-primary: #f0e8d5;
+  --text-secondary: #b5a88a;
+  --text-muted: #7a6f5a;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-modal: 0 8px 48px rgba(0, 0, 0, 0.6);
+  --transition: 0.22s ease;
+}
+
+[data-theme='light'] {
+  --bg-primary: #f5efe0;
+  --bg-secondary: #ecdcc0;
+  --bg-card: #ffffff;
+  --bg-elevated: #faf4e8;
+  --border-color: #d4b896;
+
+  --text-primary: #0d2b1a;
+  --text-secondary: #3d5a3e;
+  --text-muted: #7a6f5a;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 8px 48px rgba(0, 0, 0, 0.22);
+}
+
+/* ============================
+   Base Reset
+   ============================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ============================
+   App Layout
+   ============================ */
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.app-main {
+  flex: 1;
+  padding-bottom: 96px;
+}
+
+/* ============================
+   Scrollbar
+   ============================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green-600);
+  border-radius: 4px;
+}
+
+/* ============================
+   Overlay
+   ============================ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 200;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* ============================
+   Utility
+   ============================ */
+.price-tag {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background: var(--green-600);
+  color: var(--sand-100);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background var(--transition), transform var(--transition);
+  width: 100%;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: var(--green-500);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+/* ============================
+   Form Fields
+   ============================ */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--green-500);
+}
+
+.form-field select option {
+  background: var(--bg-elevated);
+}
+
+/* ============================
+   Section Title
+   ============================ */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+/* ============================
+   Divider
+   ============================ */
+.divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 12px 0;
+}

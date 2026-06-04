@@ -1,0 +1,270 @@
+.checkout-modal {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  max-height: 92vh;
+  animation: slideUp 0.28s ease;
+  box-shadow: var(--shadow-modal);
+}
+
+.checkout-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.checkout-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.checkout-modal-body {
+  overflow-y: auto;
+  padding: 20px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.checkout-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkout-section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Delivery toggle */
+.delivery-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.delivery-btn {
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition);
+}
+
+.delivery-btn i {
+  font-size: 1.1rem;
+}
+
+.delivery-btn--active {
+  border-color: var(--green-500);
+  background: rgba(42, 138, 82, 0.15);
+  color: var(--green-400);
+}
+
+/* Payment options */
+.payment-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.payment-btn {
+  padding: 12px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.payment-btn i {
+  font-size: 1.3rem;
+}
+
+.payment-btn--active {
+  border-color: var(--green-500);
+  background: rgba(42, 138, 82, 0.15);
+  color: var(--green-400);
+}
+
+/* Change section */
+.change-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.change-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.change-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green-500);
+  cursor: pointer;
+}
+
+.change-value {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Pix QR */
+.pix-qr-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.pix-qr-wrap p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.pix-key {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Order summary */
+.order-summary {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.order-summary h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.order-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  gap: 8px;
+}
+
+.order-summary-total {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.checkout-total-section {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  gap: 10px;
+}
+
+/* Confirm badge */
+.order-confirm-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 0 8px;
+}
+
+.order-confirm-badge i {
+  font-size: 3.5rem;
+  color: var(--green-400);
+}
+
+.order-confirm-badge span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+
+/* WhatsApp button */
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-whatsapp i {
+  font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+  background: #1dba5a;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

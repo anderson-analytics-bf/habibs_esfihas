@@ -1,0 +1,29 @@
+.favorites-page {
+  min-height: 60vh;
+}
+
+.favorites-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 24px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.favorites-empty i {
+  font-size: 3.5rem;
+  color: var(--green-700);
+}
+
+.favorites-empty p:first-of-type {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.favorites-empty p:last-of-type {
+  font-size: 0.82rem;
+}
