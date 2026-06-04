@@ -10,12 +10,13 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Baixar código atualizado
-        uses: actions/checkout@v4
-
-      - name: Copiar para WSL e reiniciar container
+      - name: Atualizar código no WSL
         run: |
-          cp -r . /home/andersonmoura/producao/habibs_esfihas/
+          cd /home/andersonmoura/producao/Monitoramentos/habibs_esfihas
+          git pull origin main
+
+      - name: Rebuild e reiniciar container
+        run: |
           cd /home/andersonmoura/producao/AirFlow
           docker compose build habibs-esfihas
           docker compose up -d habibs-esfihas
