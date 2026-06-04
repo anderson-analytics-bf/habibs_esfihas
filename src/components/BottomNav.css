@@ -16,8 +16,8 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   padding: 8px 12px;
-  box-shadow: var(--shadow-card), 0 0 0 1px rgba(42, 138, 82, 0.08);
-  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(42, 138, 82, 0.034);
+  backdrop-filter: blur(15px);
 }
 
 .nav-item {
